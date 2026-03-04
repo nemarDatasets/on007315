@@ -32,5 +32,6 @@
     "https://www.neuroelectrics.com/products/starstim/"
   ],
   "SourceDatasets": [],
-  "DatasetDOI": "10.82901/nemar.on007315"
+  "DatasetDOI": "10.82901/nemar.on007315",
+  "Version": "1.0.0"
 }
