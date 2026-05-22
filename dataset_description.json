@@ -26,6 +26,11 @@
       "Name": "EEGLAB",
       "Version": "2023",
       "Description": "EEG preprocessing and BIDS conversion"
+    },
+    {
+      "Name": "nemar-cli",
+      "Version": "0.8.8",
+      "CodeURL": "https://github.com/nemar-org/nemar-cli"
     }
   ],
   "ReferencesAndLinks": [
@@ -33,5 +38,5 @@
   ],
   "SourceDatasets": [],
   "DatasetDOI": "10.82901/nemar.on007315",
-  "Version": "1.0.0"
+  "Version": "1.0.1"
 }

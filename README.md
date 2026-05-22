@@ -29,3 +29,27 @@ All participants provided written informed consent. The study was approved by th
 
 **Contact:**\
 For questions about the dataset, contact Maria Martzoukou (<m.martzoukou@uoi.gr>)
+
+## NEMAR curation changes (2026-05-21)
+
+BIDS validator: 1 error + 743 warnings → 0 errors + 379 warnings. Raw `.set`/`.fdt` binary payloads unchanged.
+
+### `participants.tsv`
+- `participant_id` values `sub-01`/`sub-02` → `sub-G01`/`sub-G02` to match the on-disk subject directory names. Closes the `PARTICIPANT_ID_MISMATCH` error. Other columns (`age, sex, handedness, lesion_side, stroke_years_ago`) unchanged.
+
+### `dataset_description.json`
+- Appended a second `GeneratedBy` entry recording the NEMAR rehost (`nemar-cli 0.8.8`); the existing EEGLAB 2023 entry is preserved.
+
+### `task-PictureNaming_events.json`
+- Added `Units: "s"` to `onset`, `duration`, and `response_time` (BIDS-canonical SI symbol). Closes 28 `TSV_COLUMN_TYPE_REDEFINED` warnings via inheritance.
+- Added `sample` and `value` column definitions. Closes 28 `TSV_ADDITIONAL_COLUMNS_UNDEFINED` warnings via inheritance.
+
+### `task-PictureNaming_eeg.json` (new, inheriting root sidecar)
+- Channel counts: `EEGChannelCount: 32`, all other modality counts `0` (mechanical — every `channels.tsv` has 32 EEG rows, no rows of other types). Closes 168 channel-count warnings via inheritance.
+- `EEGPlacementScheme: "10-20"` (mechanical — all 32 channel names in every `channels.tsv` are standard 10-20/10-10 electrode labels: Fp1/Fp2/F3/Fz/F4/F7/F8/FC1/FC2/FC5/FC6/C3/Cz/C4/T7/T8/CP1/CP2/CP5/CP6/P3/Pz/P4/P7/P8/PO3/PO4/O1/Oz/O2/AF3/AF4).
+- `Manufacturer: "Neuroelectrics"`, `ManufacturersModelName: "Starstim-32"`, `SoftwareVersions: "EEGLAB 2023"` (mechanical — all stated explicitly in this README and the existing `dataset_description.json` `GeneratedBy` array).
+- `TaskDescription` paraphrased from this README (picture naming task across 7 timepoints during the 8-week tACS intervention).
+
+### `sub-G*/ses-*/eeg/*_channels.tsv` (14 files)
+- `type` column: `n/a` → `EEG` for all 32 rows in each file. Channel `name` column unchanged.
+- `units` column: `n/a` → `uV` for all 32 rows. Standard for scalp EEG processed through EEGLAB.
