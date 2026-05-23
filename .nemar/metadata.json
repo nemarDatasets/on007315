@@ -2,6 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "tACS for Patients with Post-Stroke Anomia",
+  "description": "This dataset comprises EEG recordings from two patients with chronic post-stroke anomia who underwent an 8-week individualized transcranial alternating current stimulation (tACS) intervention. Using a single-case experimental design with alternating stimulation and non-stimulation phases, the study investigated whether personalized tACS guided by individual EEG profiles enhances naming abilities and whether improvements persist after intervention. EEG data were collected during picture naming tasks at multiple timepoints across the intervention and follow-up periods.",
+  "methods_description": "EEG recordings were acquired using Starstim-32 during picture naming tasks at seven timepoints (weeks 1, 2, 4, 6, 8, 12, and 20). tACS was applied during alternating two-week phases with frequency and montage personalized based on initial EEG profiles. A single-case experimental design (ABAB type) was employed with 24 naming sessions and 6 EEG recording sessions per participant. EEG data were preprocessed using EEGLAB and converted to BIDS format.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -14,6 +16,38 @@
     "Anne Beuter": {},
     "Grigorios Nasios": {}
   },
+  "keywords": [
+    {
+      "term": "EEG"
+    },
+    {
+      "term": "transcranial alternating current stimulation"
+    },
+    {
+      "term": "post-stroke anomia"
+    },
+    {
+      "term": "neuromodulation"
+    },
+    {
+      "term": "picture naming"
+    },
+    {
+      "term": "cortical entrainment"
+    },
+    {
+      "term": "aphasia"
+    },
+    {
+      "term": "single-case experimental design"
+    },
+    {
+      "term": "language recovery"
+    },
+    {
+      "term": "aphasia rehabilitation"
+    }
+  ],
   "related_identifiers": [
     {
       "identifier": "10.18112/openneuro.ds007315.v1.0.0",
@@ -42,36 +76,20 @@
     }
   ],
   "resource_type_general": "Dataset",
+  "resource_type_specific": "EEG Dataset",
   "modalities": [
     "eeg"
   ],
-  "resource_type_specific": "EEG Dataset",
-  "description": "This dataset comprises EEG recordings from two patients with chronic post-stroke anomia who underwent an 8-week individualized transcranial alternating current stimulation (tACS) intervention. Using a single-case experimental design with alternating stimulation and non-stimulation phases, the study investigated whether personalized tACS guided by individual EEG profiles could enhance naming abilities through cortical entrainment. EEG data were collected during picture naming tasks at multiple timepoints across the intervention and follow-up periods.",
-  "methods_description": "EEG recordings were acquired using Starstim-32 during picture naming tasks at seven timepoints (weeks 1, 2, 4, 6, 8, 12, and 20). tACS was applied during alternating two-week phases with frequency and montage personalized based on baseline EEG profiles. Data were preprocessed using EEGLAB and organized in BIDS format.",
-  "keywords": [
-    {
-      "term": "EEG"
-    },
-    {
-      "term": "transcranial alternating current stimulation"
-    },
-    {
-      "term": "post-stroke anomia"
-    },
-    {
-      "term": "Anomia",
-      "subject_scheme": "MeSH",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D000849"
-    },
-    {
-      "term": "neuromodulation"
-    },
-    {
-      "term": "cortical entrainment"
-    },
-    {
-      "term": "single-case experimental design"
-    }
+  "sizes": [
+    "1.2 GB (29 files)"
+  ],
+  "formats": [
+    ".fdt",
+    ".json",
+    ".md",
+    ".set",
+    ".tsv",
+    ".yml"
   ],
   "source_hash": "c2e81e285374593c5cfe6be1822de6d5230eaa279ad6dbfe040ecd963dce89b1"
 }
