@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "tACS for Patients with Post-Stroke Anomia",
-  "description": "This dataset comprises EEG recordings from two patients with chronic post-stroke anomia who underwent an 8-week individualized transcranial alternating current stimulation (tACS) intervention. Using a single-case experimental design with alternating stimulation and non-stimulation phases, the study investigated whether personalized tACS guided by individual EEG profiles enhances naming abilities and whether improvements persist after intervention. EEG data were collected during picture naming tasks at multiple timepoints across the intervention and follow-up periods.",
-  "methods_description": "EEG recordings were acquired using Starstim-32 during picture naming tasks at seven timepoints (weeks 1, 2, 4, 6, 8, 12, and 20). tACS was applied during alternating two-week phases with frequency and montage personalized based on initial EEG profiles. A single-case experimental design (ABAB type) was employed with 24 naming sessions and 6 EEG recording sessions per participant. EEG data were preprocessed using EEGLAB and converted to BIDS format.",
+  "description": "This dataset contains EEG recordings from two chronic post-stroke patients with anomia (one left-hemisphere and one right-hemisphere lesion) who took part in an 8-week individualized transcranial alternating current stimulation (tACS) intervention. Stimulation and non-stimulation phases alternated every two weeks in a single-case ABAB design. EEG was recorded during a picture naming task across intervention and follow-up sessions to examine whether tACS improves naming accuracy and latency and whether the effects persist.",
+  "methods_description": "EEG was recorded with a Starstim-32 system during a picture naming task using standardized stimuli. tACS frequency and montage were personalized from each participant's initial EEG profile. Sessions were recorded at weeks 1, 2, 4, 6 and 8 of the intervention and at follow-ups at weeks 12 and 20. Data were preprocessed in EEGLAB and converted to BIDS.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -24,28 +24,25 @@
       "term": "transcranial alternating current stimulation"
     },
     {
-      "term": "post-stroke anomia"
+      "term": "Anomia",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D000849"
     },
     {
-      "term": "neuromodulation"
+      "term": "Stroke",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D020521"
+    },
+    {
+      "term": "Aphasia",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D001037"
     },
     {
       "term": "picture naming"
     },
     {
-      "term": "cortical entrainment"
-    },
-    {
-      "term": "aphasia"
-    },
-    {
       "term": "single-case experimental design"
-    },
-    {
-      "term": "language recovery"
-    },
-    {
-      "term": "aphasia rehabilitation"
     }
   ],
   "related_identifiers": [
@@ -60,14 +57,9 @@
       "relation_type": "IsDescribedBy"
     },
     {
-      "identifier": "https://nemar.org/dataexplorer/detail?dataset_id=on007315",
+      "identifier": "https://nemar.org/dataset/on007315",
       "identifier_type": "URL",
       "relation_type": "IsDescribedBy"
-    },
-    {
-      "identifier": "10.82901/nemar.on007315",
-      "identifier_type": "DOI",
-      "relation_type": "IsIdenticalTo"
     }
   ],
   "funding_references": [
@@ -81,7 +73,7 @@
     "eeg"
   ],
   "sizes": [
-    "1.2 GB (29 files)"
+    "1.09 GB (29 files)"
   ],
   "formats": [
     ".fdt",
