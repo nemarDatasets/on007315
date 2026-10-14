@@ -29,3 +29,31 @@ All participants provided written informed consent. The study was approved by th
 
 **Contact:**\
 For questions about the dataset, contact Maria Martzoukou (<m.martzoukou@uoi.gr>)
+
+## NEMAR curation changes (2026-05-21, revised 2026-05-27)
+
+The BIDS validator went from 1 error + 743 warnings to 0 errors + 379 warnings. None of the raw `.set`/`.fdt` files were modified — every change is to a text sidecar.
+
+**Participants table (`participants.tsv`)**
+- The participant identifiers were `sub-01` and `sub-02`, but the on-disk subject directories are `sub-G01` and `sub-G02`. The values were updated to `sub-G01`/`sub-G02` so the table agrees with the directory names. Other columns (`age`, `sex`, `handedness`, `lesion_side`, `stroke_years_ago`) are unchanged. This change was carried over from EEGDash's on-load repair and baked into the rehost.
+
+**Channel tables (`sub-G*/ses-*/eeg/*_channels.tsv`, 14 files)**
+- The `type` column was `n/a` for every row; it now reads `EEG` for all 32 rows in each file, matching what the recordings actually contain (32 scalp electrodes named with standard 10-20/10-10 labels). Channel names are unchanged.
+- The `units` column was `n/a`; it now reads `uV`, which is the standard unit for scalp EEG processed through EEGLAB.
+
+**Events sidecar (`task-PictureNaming_events.json`, root)**
+- Added `Units: "s"` to the `onset`, `duration`, and `response_time` columns. BIDS expects an SI symbol on time columns, and seconds is what the per-recording event tables already contain.
+- Added column descriptions for `sample` and `value`, which appear in every events table but were previously undocumented.
+
+**Recording sidecar (`task-PictureNaming_eeg.json`, root, new)**
+- Records the channel inventory (`EEGChannelCount: 32`, all other modality counts `0`), which matches every `channels.tsv` in the dataset (32 EEG rows, no rows of other types).
+- Records the electrode layout (`EEGPlacementScheme: "10-20"`), justified by the channel names in every `channels.tsv`: Fp1, Fp2, F3, Fz, F4, F7, F8, FC1, FC2, FC5, FC6, C3, Cz, C4, T7, T8, CP1, CP2, CP5, CP6, P3, Pz, P4, P7, P8, PO3, PO4, O1, Oz, O2, AF3, AF4.
+- Records the hardware (`Manufacturer: "Neuroelectrics"`, `ManufacturersModelName: "Starstim-32"`, `SoftwareVersions: "EEGLAB 2023"`), all of which are stated in this README and the source's `dataset_description.json`.
+- Adds a short `TaskDescription` paraphrased from this README (picture naming task across the 7 timepoints of the 8-week tACS intervention).
+
+**Dataset description (`dataset_description.json`)**
+- Updated `BIDSVersion` to `1.11.1` (the version the current validator checks against).
+- `GeneratedBy` was kept exactly as the source published it — a single EEGLAB 2023 entry recording the original BIDS-conversion tooling. Nothing else was added there.
+
+**Remaining warnings (379) — left on purpose**
+- All remaining warnings are "recommended but missing" sidecar fields that need information from the study, lab, or equipment that isn't in the dataset (for example: device serial number, institution name and address, cap manufacturer and model, ground electrode location, head circumference, hardware filters, subject artefact description, stimulus-presentation details, cognitive-atlas IDs, HED schema version). They were left blank rather than filled with guesses. `GeneratedBy` is not among them, since the source already declares an EEGLAB entry.

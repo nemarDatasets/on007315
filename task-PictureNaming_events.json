@@ -1,9 +1,17 @@
 {
   "onset": {
-    "Description": "Time in seconds from the beginning of the recording to the start of the event."
+    "Description": "Time in seconds from the beginning of the recording to the start of the event.",
+    "Units": "s"
   },
   "duration": {
-    "Description": "Duration of the event in seconds."
+    "Description": "Duration of the event in seconds.",
+    "Units": "s"
+  },
+  "sample": {
+    "Description": "Onset of the event in samples (relative to the start of the recording)."
+  },
+  "value": {
+    "Description": "Numeric trigger code emitted by the stimulus presentation system."
   },
   "trial_type": {
     "Description": "Type of trial (e.g., 'stim', 'response', 'quality', 'motivation')",
@@ -17,6 +25,7 @@
     "Description": "Identifier of the stimulus presented (e.g., image name or word)."
   },
   "response_time": {
-    "Description": "Time from stimulus onset to participant's vocal response, in seconds."
+    "Description": "Time from stimulus onset to participant's vocal response, in seconds.",
+    "Units": "s"
   }
 }

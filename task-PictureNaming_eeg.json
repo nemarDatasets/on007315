@@ -1,0 +1,13 @@
+{
+  "TaskDescription": "Picture naming task using a standardized set of stimuli. Participants (post-stroke anomia patients) named pictures while EEG was recorded. Recordings span 7 timepoints across an 8-week tACS intervention plus follow-up (sessions labeled by week: 1, 2, 4, 6, 8, 12, 20).",
+  "EEGChannelCount": 32,
+  "EOGChannelCount": 0,
+  "ECGChannelCount": 0,
+  "EMGChannelCount": 0,
+  "MISCChannelCount": 0,
+  "TriggerChannelCount": 0,
+  "EEGPlacementScheme": "10-20",
+  "Manufacturer": "Neuroelectrics",
+  "ManufacturersModelName": "Starstim-32",
+  "SoftwareVersions": "EEGLAB 2023"
+}
