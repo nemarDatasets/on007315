@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "tACS for Patients with Post-Stroke Anomia",
-  "description": "This dataset contains EEG recordings from two chronic post-stroke patients with anomia (one left-hemisphere and one right-hemisphere lesion) who took part in an 8-week individualized transcranial alternating current stimulation (tACS) intervention. Stimulation and non-stimulation phases alternated every two weeks in a single-case ABAB design. EEG was recorded during a picture naming task across intervention and follow-up sessions to examine whether tACS improves naming accuracy and latency and whether the effects persist.",
-  "methods_description": "EEG was recorded with a Starstim-32 system during a picture naming task using standardized stimuli. tACS frequency and montage were personalized from each participant's initial EEG profile. Sessions were recorded at weeks 1, 2, 4, 6 and 8 of the intervention and at follow-ups at weeks 12 and 20. Data were preprocessed in EEGLAB and converted to BIDS.",
+  "description": "EEG recordings from two chronic post-stroke anomia patients (one left-hemisphere and one right-hemisphere lesion) who took part in an 8-week individualized transcranial alternating current stimulation (tACS) intervention. Stimulation and non-stimulation phases alternated every two weeks in a single-case ABAB design, with stimulation frequency and montage personalized from each patient's baseline EEG. EEG was recorded during a picture naming task at intervention weeks and follow-ups to assess effects on naming accuracy and latency.",
+  "methods_description": "EEG was recorded with a 32-channel Neuroelectrics Starstim-32 system during a picture naming task using standardized stimuli. Sessions took place at weeks 1, 2, 4, 6 and 8 and at follow-ups at weeks 12 and 20. tACS frequency and montage were individualized from initial EEG. Data were processed in EEGLAB and converted to BIDS.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -24,9 +24,7 @@
       "term": "transcranial alternating current stimulation"
     },
     {
-      "term": "Anomia",
-      "subject_scheme": "MeSH",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D000849"
+      "term": "Anomia"
     },
     {
       "term": "Stroke",
@@ -83,5 +81,5 @@
     ".tsv",
     ".yml"
   ],
-  "source_hash": "c2e81e285374593c5cfe6be1822de6d5230eaa279ad6dbfe040ecd963dce89b1"
+  "source_hash": "c78a013a9e5f279ddb95908198eb637250a4372a4cf2ff330cb03771528668c8"
 }
